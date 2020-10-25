@@ -1,6 +1,6 @@
 {
   "name": "@danielemeryau/dumb-node-rpc-base-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The base client used by dumb-node-rpc",
   "main": "dist/index.js",
   "scripts": {
