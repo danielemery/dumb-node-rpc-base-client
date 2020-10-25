@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/danielemery/dumb-node-rpc-base-client#readme",
   "dependencies": {
+    "@danielemeryau/logger": "^0.1.1",
     "axios": "^0.21.0"
   },
   "devDependencies": {
