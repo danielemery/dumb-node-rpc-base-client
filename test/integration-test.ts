@@ -1,13 +1,13 @@
 import { assert } from 'chai';
 
 import DumbServer from '@danielemeryau/dumb-node-rpc-base-server';
-import DumbClient from '../src/index';
+import DumbClient from '..';
 import Logger from '@danielemeryau/logger';
 
 const testLogger = new Logger('integration-test');
 
 const PORT = 3000;
-const API_URL = `http://localhost:${PORT}`
+const API_URL = `http://localhost:${PORT}`;
 
 const SAMPLE_RESPONSE = {
   someString: 'hello, world',
