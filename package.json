@@ -13,7 +13,7 @@
     "url": "git+https://github.com/danielemery/dumb-node-rpc-base-client.git"
   },
   "author": "Daniel Emery <danielremery@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/danielemery/dumb-node-rpc-base-client/issues"
   },
