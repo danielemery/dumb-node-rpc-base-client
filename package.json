@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf dist && npx tsc",
     "integration-test": "npx ts-node test/integration-test | npx bunyan",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-mocha -p tsconfig.json src/**/*.test.ts"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,12 @@
     "@danielemeryau/dumb-node-rpc-base-server": "^0.0.6",
     "@danielemeryau/prettier-config": "^0.0.6",
     "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.3",
     "@types/node": "^14.14.6",
     "bunyan": "^1.8.14",
     "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "ts-mocha": "^8.0.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   }
