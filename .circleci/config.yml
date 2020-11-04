@@ -6,12 +6,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Run Unit Tests
+          name: Run Build
           command: |
             npm ci
             npm run build
       - run:
-          name: Run Integration Test
+          name: Run Unit Tests
+          command: |
+            npm t
+      - run:
+          name: Run Integration Tests
           command: |
             npm run integration-test
       - persist_to_workspace:
