@@ -1,10 +1,11 @@
 import { assert } from 'chai';
 
 import DumbServer from '@danielemeryau/dumb-node-rpc-base-server';
-import DumbClient from '..';
-import Logger from '@danielemeryau/logger';
+import DumbClient from '../index';
+import { BunyanLogger } from '@danielemeryau/logger';
 
-const testLogger = new Logger('integration-test');
+const testLogger = new BunyanLogger('integration-test');
+const clientLogger = testLogger.child('client');
 
 const PORT = 3000;
 const API_URL = `http://localhost:${PORT}`;
@@ -19,7 +20,7 @@ const SAMPLE_RESPONSE_WITH_DATE = {
 
 class IntegrationTestServer extends DumbServer {
   constructor(loggerName: string, port: number) {
-    super(loggerName, port);
+    super(loggerName, port, {});
 
     this.addRoute('/Get', () => Promise.resolve(SAMPLE_RESPONSE));
     this.addRoute('/GetDate', () => Promise.resolve(SAMPLE_RESPONSE_WITH_DATE));
@@ -27,7 +28,7 @@ class IntegrationTestServer extends DumbServer {
 }
 
 async function runTest() {
-  const client = new DumbClient(API_URL, 'integration-test-client');
+  const client = new DumbClient(API_URL, clientLogger);
   const server = new IntegrationTestServer('integration-test-server', PORT);
   server.listen();
 
